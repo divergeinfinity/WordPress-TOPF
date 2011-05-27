@@ -1,0 +1,54 @@
+=== Theme Options Panel Framework ===
+Contributors: Jeff Parsons
+Tags: options, theme options
+Requires at least: 3.0
+Tested up to: 3.1.2
+Stable tag: 0.9
+License: GPLv2
+
+== Description ==
+
+The Theme Options Panel Framework makes it easy to include an options panel in any WordPress theme.  It was built so that theme developers can concentrate on making the actual theme rather than spending a ton of time on creating an options panel from scratch.  It's free to use in both commercial and personal projects.
+
+This code is based on the Thematic Options Panel (http://wptheming.com/2010/11/thematic-options-panel-v2/)
+That code is heavily based on the [WooFramework](http://www.woothemes.com/) and their option styles.
+
+== Installation ==
+
+Place the options folder in your theme or child theme folder.
+Define TOPF_OPTIONS with the name of your options table entry for WordPress.  All options are bound into an array and filed into the TOPF_OPTIONS entry.
+Include the main options.php file into your theme:
+	define( 'TOPF_OPTIONS', 'theme_divergence_options' );
+	require_once( get_stylesheet_directory() . '/options/options.php' );
+Setup the options you wish to use in The Array ($topf_theme_options) found in ./options/theme_default_options.php
+Alter the validation for each option in ./options/option-register.php
+Include the implementation file (change and add your own implementations here)
+	require_once( get_stylesheet_directory() . '/options/options-implement.php' );
+
+== Frequently Asked Questions ==
+
+= How can I see how it's used? =
+
+The Theme Options Panel Framework was developed for and used by the Divergence Child Theme for Thematic and WordPress.  Download and install both Thematic and Divergence, activate Divergence as your Theme, and visit the Admin->Appearance->Options section to see it in use.
+
+= What options are available to use? =
+
+* background (a set of options to define a background)
+* border
+* checkbox
+* color (a jquery color picker)
+* images (use images instead of radio buttons)
+* multicheck
+* radio
+* select
+* text
+* textarea
+* typography (a set of options to define typography)
+* upload (an image uploader)
+
+== Changelog ==
+
+= 0.9 =
+
+* Initial release
+
