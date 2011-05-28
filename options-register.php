@@ -124,6 +124,7 @@ function topf_options_validate( $input )
 			$valid_input['displaydivider'] = ( isset( $input['displaydivider'] ) ? '1' : '0' );
 			$valid_input['displayexcerpts'] = ( isset( $input['displayexcerpts'] ) ? '1' : '0' );
 			$valid_input['hilitefirst'] = ( isset( $input['hilitefirst'] ) ? '1' : '0' );
+			$valid_input['firstpost_border'] = $input['firstpost_border'];
 			$valid_input['displayfullfirst'] = ( isset( $input['displayfullfirst'] ) ? '1' : '0' );
 			$valid_input['home_aside_insert'] = $input['home_aside_insert'];
 			$valid_input['usedefaultfooter'] = ( isset( $input['usedefaultfooter'] ) ? '1' : '0' );
@@ -142,6 +143,7 @@ function topf_options_validate( $input )
 			$valid_input['displaydivider'] = $our_parser->defaults['displaydivider'];
 			$valid_input['displayexcerpts'] = $our_parser->defaults['displayexcerpts'];
 			$valid_input['hilitefirst'] = $our_parser->defaults['hilitefirst'];
+			$valid_input['firstpost_border'] = $our_parser->defaults['firstpost_border'];
 			$valid_input['displayfullfirst'] = $our_parser->defaults['displayfullfirst'];
 			$valid_input['home_aside_insert'] = $our_parser->defaults['home_aside_insert'];
 			$valid_input['usedefaultfooter'] = $our_parser->defaults['usedefaultfooter'];

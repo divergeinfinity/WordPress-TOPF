@@ -2,8 +2,8 @@
 Contributors: Jeff Parsons
 Tags: options, theme options
 Requires at least: 3.0
-Tested up to: 3.1.2
-Stable tag: 0.9
+Tested up to: 3.1.3
+Stable tag: 1.0
 License: GPLv2
 
 == Description ==
@@ -34,7 +34,7 @@ The Theme Options Panel Framework was developed for and used by the Divergence C
 = What options are available to use? =
 
 * background (a set of options to define a background)
-* border
+* border (a set of options to define a border)
 * checkbox
 * color (a jquery color picker)
 * images (use images instead of radio buttons)
@@ -47,6 +47,12 @@ The Theme Options Panel Framework was developed for and used by the Divergence C
 * upload (an image uploader)
 
 == Changelog ==
+
+= 1.0 =
+
+* added the multicheck option in implementation
+* added the border option in implementation
+* minor documentation improvements
 
 = 0.9 =
 

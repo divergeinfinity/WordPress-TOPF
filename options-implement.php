@@ -173,7 +173,8 @@ function topf_head_css()
 // First Post
 	if ( $topf_options['hilitefirst'] )
 	{
-		$output .= ".firstindexpost {border: 3px double #" . $topf_options['secondcolor'] . "; padding: 36px 20px 0px 20px;}\n";
+		$values = $topf_options['firstpost_border'];
+		$output .= ".firstindexpost {border: ".$values['width']."px ".$values['style']." #".$values['color']."; padding: 36px 20px 0px 20px;}\n";
 	}
 	else
 	{
@@ -448,6 +449,36 @@ add_action( 'wp_head', 'childtheme_favicon' );
 
 
 /*---------------------------------------------------------------------------*/
+//  Show analytics code in footer
+/*---------------------------------------------------------------------------*/
+function childtheme_analytics()
+{
+	global $topf_options;
+
+	$output = $topf_options['google_analytics'];
+	if ( $output <> "" )
+		echo stripslashes( $output ) . "\n";
+}
+add_action( 'wp_footer', 'childtheme_analytics' );
+
+
+/*---------------------------------------------------------------------------*/
+//  Adds a Short Code for the child theme Link
+/*---------------------------------------------------------------------------*/
+function childfooter_theme_link()
+{
+    $themelink = "<a class=\"theme-link\" href=\"".TEMPLATEURI."\" title=\"Thematic Child Theme - ".TEMPLATENAME."\" rel=\"designer\">".TEMPLATENAME."</a>";
+    return $themelink;
+}
+add_shortcode( 'child-link', 'childfooter_theme_link' );
+
+
+/*---------------------------------------------------------------------------*/
+//  Everything from here on is mostly Thematic Theme Framework specific
+//	They serve as examples of how some options may be implemented
+/*---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------*/
 //  Replace Blog Title With Logo
 //  If a logo is uploaded, unhook the blog title
 /*---------------------------------------------------------------------------*/
@@ -486,6 +517,32 @@ function childtheme_logo()
 
 
 /*---------------------------------------------------------------------------*/
+//  Home Page exclude posts from certain categories (TOPF Options)
+/*---------------------------------------------------------------------------*/
+function homepage_excludecategories()
+{
+	global $wp_query;
+	global $topf_options;
+
+	if ( is_home() )
+	{
+		$exclude_categories = $topf_options['exclude_cats_home'];
+		if ( $exclude_categories == "" ) $exclude_categories = array();
+		$exclude_list = array();
+		foreach ( $exclude_categories as $key => $value )
+		{
+			$exclude_list[] = $key;
+		}
+		$defaults = $wp_query->query_vars;
+		$exclude = array( 'category__not_in' => $exclude_list );
+		$args = wp_parse_args( $exclude, $defaults );
+		query_posts( $args );
+	}
+}
+add_action( 'thematic_above_indexloop', 'homepage_excludecategories' );
+
+
+/*---------------------------------------------------------------------------*/
 //  Filter Footer Text
 /*---------------------------------------------------------------------------*/
 function childtheme_footer( $thm_footertext )
@@ -497,29 +554,5 @@ function childtheme_footer( $thm_footertext )
 }
 add_filter( 'thematic_footertext', 'childtheme_footer' );
 
-
-/*---------------------------------------------------------------------------*/
-//  Show analytics code in footer
-/*---------------------------------------------------------------------------*/
-function childtheme_analytics()
-{
-	global $topf_options;
-
-	$output = $topf_options['google_analytics'];
-	if ( $output <> "" )
-		echo stripslashes( $output ) . "\n";
-}
-add_action( 'wp_footer', 'childtheme_analytics' );
-
-
-/*---------------------------------------------------------------------------*/
-//  Adds a Short Code for the child theme Link
-/*---------------------------------------------------------------------------*/
-function childfooter_theme_link()
-{
-    $themelink = "<a class=\"theme-link\" href=\"".TEMPLATEURI."\" title=\"Thematic Child Theme - ".TEMPLATENAME."\" rel=\"designer\">".TEMPLATENAME."</a>";
-    return $themelink;
-}
-add_shortcode( 'child-link', 'childfooter_theme_link' );
 
 ?>

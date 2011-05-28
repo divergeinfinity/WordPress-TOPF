@@ -37,7 +37,7 @@ add_action( 'init', 'setup_theme_default_options_array' );
 function setup_theme_default_options_array()
 {
 	/*---------------------------------------------------------------------------*/
-	//  Preliminary setup
+	//  Preliminary setup -- a few arrays that will used within the Options
 	/*---------------------------------------------------------------------------*/
 	//	Access the WordPress Categories via an Array
 	$topf_categories = array();
@@ -93,7 +93,7 @@ function setup_theme_default_options_array()
 
 	$topf_theme_options[] = array(
 		"name"		=> "Custom Favicon",
-		"desc"		=> "Upload a 16px x 16px png/gif/ico image that will represent your website's favicon.  (leave blank for none)",
+		"desc"		=> "Upload a png/gif/ico image that will represent your website's favicon.  (leave blank for none)",
 		"id"		=> "custom_favicon",
 		"class"		=> "",
 		"std"		=> "",
@@ -306,6 +306,18 @@ function setup_theme_default_options_array()
 		"id"		=> "hilitefirst",
 		"std"		=> "1",
 		"type"		=> "checkbox"
+	);
+
+	$topf_theme_options[] = array(
+		"name"		=> "First Post Border",
+		"desc"		=> "Set the attributes for the border of the first post if Accentuate First Post (above) is checked.",
+		"id"		=> "firstpost_border",
+		"std"		=> array(
+					"width"	=> "3",/* px */
+					"style"	=> "double",
+					"color"	=> "3E853E"
+		),
+		"type"		=> "border"
 	);
 
 	$topf_theme_options[] = array(

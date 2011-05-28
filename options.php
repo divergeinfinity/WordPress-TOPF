@@ -14,10 +14,10 @@
  *	write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
  *	@package TOPF
- *	@version 0.9
+ *	@version 1.0
  *	@author Jeff Parsons <jeffrey.allen.parsons@gmail.com>
  *	@copyright Copyright (c) 2011, Jeff Parsons
- *	@link http://diverge.blogdns.com
+ *	@link http://diverge.blogdns.com/wordpress-theme-options-panel-framework/
  *	@license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 

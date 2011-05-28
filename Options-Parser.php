@@ -39,7 +39,7 @@ class Options_Parser
 		foreach ( $this->these_options as $item )
 		{
 			// Keep all ID's lowercase.  Replace non-word chars with underscores.
-			$item['id'] = preg_replace( '/\W/', '_', strtolower( $item['id']) );
+			if ( isset( $item['id'] ) ) $item['id'] = preg_replace( '/\W/', '_', strtolower( $item['id']) );
 
 			if ( $item['type'] == "heading" )
 			{
@@ -566,9 +566,14 @@ class Options_Parser
 					id="' . $item['id'] . '_style">';
 				$styles = array(
 					'none' => 'None',
-					'solid' => 'Solid',
+					'dotted' => 'Dotted',
 					'dashed' => 'Dashed',
-					'dotted' => 'Dotted'
+					'solid' => 'Solid',
+					'double' => 'Double',
+					'groove' => 'Groove',
+					'ridge' => 'Ridge',
+					'inset' => 'Inset',
+					'outset' => 'Outset'
 				);
 				foreach ( $styles as $i => $style )
 				{
