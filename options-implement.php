@@ -5,6 +5,13 @@
 //	The bulk of the file formulates final CSS that is added on after all other CSS
 /*---------------------------------------------------------------------------*/
 
+/*---------------------------------------------------------------------------*/
+//	Very little of this file will be applicable to your Theme.  It serves as an
+//	example only of how to implement options from TOPF, as most of the file is for
+//	the Divergence Theme and the Thematic Theme Framework.  The bulk of this file
+//	outputs final CSS for Divergence.
+/*---------------------------------------------------------------------------*/
+
 function topf_wp_head()
 {
 	global $topf_options;
@@ -84,7 +91,7 @@ function topf_head_css()
 
 // Header Backgrounds
 	if ( $topf_options['usedefaultheader'] )
-		$output .= "#header {background-image: url(".get_stylesheet_directory_uri()."/images/header_bg1.gif);}\n";
+		$output .= "#header {background-image: url(".get_stylesheet_directory_uri()."/images/header_bg.gif);}\n";
 	else if ( $topf_options['headerbackground']['image'] <> "" )
 	{
 		$output .= "#header {background-image: url(".$topf_options['headerbackground']['image'].");}\n";
@@ -101,7 +108,7 @@ function topf_head_css()
 	$brandingbg = $topf_options['brandingbackground'];
 	if ( $topf_options['usedefaultbranding'] )
 	{
-		$output .= "#branding {background-image: url(".get_stylesheet_directory_uri()."/images/diverge.jpg);}\n";
+		$output .= "#branding {background-image: url(".get_stylesheet_directory_uri()."/images/diverge_branding.jpg);}\n";
 		$output .= "#branding {background-repeat: no-repeat;}\n";
 	}
 	else if ( $brandingbg <> "" )
@@ -117,7 +124,7 @@ function topf_head_css()
 // Body Backgrounds
 	if ( $topf_options['usedefaultbody'] )
 	{
-		$output .= "body {background-image: url(".get_stylesheet_directory_uri()."/images/gradient.png);}\n";
+		$output .= "body {background-image: url(".get_stylesheet_directory_uri()."/images/body_gradient.png);}\n";
 		$output .= "body {background-repeat: repeat-x;}\n";
 	}
 	else if ( $topf_options['bodybackground']['image'] <> "" )

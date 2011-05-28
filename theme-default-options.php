@@ -40,36 +40,13 @@ function setup_theme_default_options_array()
 	//  Preliminary setup
 	/*---------------------------------------------------------------------------*/
 	//	Access the WordPress Categories via an Array
-//	$topf_categories = array();
-//	$topf_categories_obj = get_categories( 'hide_empty=0' );
-//	foreach ( $topf_categories_obj as $topf_cat )
-//	{
-//		$topf_categories[$topf_cat->cat_ID] = $topf_cat->cat_name;
-//	}
-//	$categories_tmp = array_unshift( $topf_categories, "Select a category:" );
-
-	//	Access the WordPress Pages via an Array
-//	$topf_pages = array();
-//	$topf_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
-//	foreach ( $topf_pages_obj as $topf_page )
-//	{
-//		$topf_pages[$topf_page->ID] = $topf_page->post_name;
-//	}
-//	$topf_pages_tmp = array_unshift( $topf_pages, "Select a page:" );
-
-	//	Font Reader
-//	require_once( get_stylesheet_directory() . "/library/TTFReader.php");
-//	$ttf = new TTFReader();
-
-	// Directory containing fonts
-//	$typeface_path = get_stylesheet_directory() . "/typefaces";
-
-	// File to hold font cache; set to FALSE to not use font cache.
-	// Note: If you have many fonts, leaving the font cache enabled
-	// will result in a significant speed improvement.
-	//$cachefile = get_stylesheet_directory() . "/typefaces/font_cache.dat";
-
-//	$fonts = $ttf->get_all( $typeface_path, false );
+	$topf_categories = array();
+	$topf_categories_obj = get_categories( 'hide_empty=0' );
+	foreach ( $topf_categories_obj as $topf_cat )
+	{
+		$topf_categories[$topf_cat->cat_ID] = $topf_cat->cat_name;
+	}
+//	array_unshift( $topf_categories, "Select a category:" );
 
 	//	Stylesheets Reader
 	$alt_stylesheet_path = get_stylesheet_directory()."/styles";
@@ -271,6 +248,15 @@ function setup_theme_default_options_array()
 	);
 
 	$topf_theme_options[] = array(
+		"name"		=> "Home Page Exclude Categories",
+		"desc"		=> "Select which categories to exclude from display on the Home Page.",
+		"id"		=> "exclude_cats_home",
+		"std"		=> array(),
+		"type"		=> "multicheck",
+		"options"	=> $topf_categories
+	);
+
+	$topf_theme_options[] = array(
 		"name"		=> "Use Stylized Calendar On Posts",
 		"desc"		=> "Check to display the stylized Calendar for the date on Posts.  Displayed in front of Post Titles.",
 		"id"		=> "displaycalendar",
@@ -287,7 +273,7 @@ function setup_theme_default_options_array()
 		"options"	=> array(
 					"min"		=> "1",
 					"max"		=> "100"
-		),
+		)
 	);
 
 	$topf_theme_options[] = array(

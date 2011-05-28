@@ -38,6 +38,9 @@ class Options_Parser
 
 		foreach ( $this->these_options as $item )
 		{
+			// Keep all ID's lowercase.  Replace non-word chars with underscores.
+			$item['id'] = preg_replace( '/\W/', '_', strtolower( $item['id']) );
+
 			if ( $item['type'] == "heading" )
 			{
 				$tab_headers[] = $item['name'];
@@ -276,14 +279,13 @@ class Options_Parser
 				$multi_stored = $data[$item['id']];
 				foreach ( $item['options'] as $key => $option )
 				{
-					$topf_key_string = $item['id'] . '_' . $key;
 					$display .= '<input
-						id="'.$topf_key_string.'"
+						id="'.$item['id'].'_'.$key.'"
 						class="topf-input topf-checkbox"
-						name="'.$this->this_entry.'['.$item['id'].']"
+						name="'.$this->this_entry.'['.$item['id'].']['.$key.']"
 						type="checkbox"
 						value="1" '.checked( $multi_stored[$key], '1', '0' ).' />
-						<label for="'.$topf_key_string.'">'.$option.'</label>';
+						<label for="'.$item['id'].'_'.$key.'">'.$option.'</label>';
 				}
 				break;
 

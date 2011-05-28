@@ -117,6 +117,7 @@ function topf_options_validate( $input )
 			$valid_input['layout'] = $input['layout'];
 			$valid_input['usedefaultbody'] = ( isset( $input['usedefaultbody'] ) ? '1' : '0' );
 			$valid_input['bodybackground'] = $input['bodybackground'];
+			$valid_input['exclude_cats_home'] = $input['exclude_cats_home'];
 			$valid_input['displaycalendar'] = ( isset( $input['displaycalendar'] ) ? '1' : '0' );
 			$valid_input['calendar_opacity'] = $input['calendar_opacity'];
 			$valid_input['displaymeta'] = ( isset( $input['displaymeta'] ) ? '1' : '0' );
@@ -134,6 +135,7 @@ function topf_options_validate( $input )
 			$valid_input['layout'] = $our_parser->defaults['layout'];
 			$valid_input['usedefaultbody'] = $our_parser->defaults['usedefaultbody'];
 			$valid_input['bodybackground'] = $our_parser->defaults['bodybackground'];
+			$valid_input['exclude_cats_home'] = $our_parser->defaults['exclude_cats_home'];
 			$valid_input['displaycalendar'] = $our_parser->defaults['displaycalendar'];
 			$valid_input['calendar_opacity'] = $our_parser->defaults['calendar_opacity'];
 			$valid_input['displaymeta'] = $our_parser->defaults['displaymeta'];
