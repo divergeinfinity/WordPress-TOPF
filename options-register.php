@@ -121,7 +121,7 @@ function topf_options_validate( $input )
 			$valid_input['displaycalendar'] = ( isset( $input['displaycalendar'] ) ? '1' : '0' );
 			$valid_input['calendar_opacity'] = $input['calendar_opacity'];
 			$valid_input['displaymeta'] = ( isset( $input['displaymeta'] ) ? '1' : '0' );
-			$valid_input['displaydivider'] = ( isset( $input['displaydivider'] ) ? '1' : '0' );
+			$valid_input['postdivider'] = $input['postdivider'];
 			$valid_input['displayexcerpts'] = ( isset( $input['displayexcerpts'] ) ? '1' : '0' );
 			$valid_input['hilitefirst'] = ( isset( $input['hilitefirst'] ) ? '1' : '0' );
 			$valid_input['firstpost_border'] = $input['firstpost_border'];
@@ -140,7 +140,7 @@ function topf_options_validate( $input )
 			$valid_input['displaycalendar'] = $our_parser->defaults['displaycalendar'];
 			$valid_input['calendar_opacity'] = $our_parser->defaults['calendar_opacity'];
 			$valid_input['displaymeta'] = $our_parser->defaults['displaymeta'];
-			$valid_input['displaydivider'] = $our_parser->defaults['displaydivider'];
+			$valid_input['postdivider'] = $our_parser->defaults['postdivider'];
 			$valid_input['displayexcerpts'] = $our_parser->defaults['displayexcerpts'];
 			$valid_input['hilitefirst'] = $our_parser->defaults['hilitefirst'];
 			$valid_input['firstpost_border'] = $our_parser->defaults['firstpost_border'];

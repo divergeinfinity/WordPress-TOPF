@@ -171,7 +171,7 @@ function setup_theme_default_options_array()
 		"name"		=> "Custom Branding Image",
 		"desc"		=> "Upload your custom Branding image as a background for your theme.(will be resized to 960x150). You must uncheck Use Default Branding Image (above) for this to be used.  (leave blank for none)",
 		"id"		=> "brandingbackground",
-		"std"		=> "1",
+		"std"		=> "",
 		"type"		=> "upload"
 	);
 
@@ -285,11 +285,15 @@ function setup_theme_default_options_array()
 	);
 
 	$topf_theme_options[] = array(
-		"name"		=> "Show Default Post Divider",
-		"desc"		=> "Check to display the graphical Post Divider at the end of a post.  Will appear between posts on the Home or Category pages.",
-		"id"		=> "displaydivider",
-		"std"		=> "1",
-		"type"		=> "checkbox"
+		"name"		=> "Post Divider Border",
+		"desc"		=> "Set the attributes of the Post Divider.",
+		"id"		=> "postdivider",
+		"std"		=> array(
+					"width"	=> "1",/* px */
+					"style"	=> "dotted",
+					"color"	=> "3E853E"
+		),
+		"type"		=> "border"
 	);
 
 	$topf_theme_options[] = array(
