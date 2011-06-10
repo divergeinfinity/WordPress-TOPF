@@ -1,6 +1,13 @@
 <?php
 
 /*---------------------------------------------------------------------------*/
+//	@package TOPF
+//	@version 1.0
+//	@author Jeff Parsons <jeffrey.allen.parsons@gmail.com>
+//	@copyright Copyright (c) 2011, Jeff Parsons
+//	@link http://diverge.blogdns.com/blog/wordpress-theme-options-panel-framework/
+//	@license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+//
 //	Theme Options Panel Framework Class Definition for Options_Parser
 /*---------------------------------------------------------------------------*/
 class Options_Parser

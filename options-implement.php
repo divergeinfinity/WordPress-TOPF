@@ -1,5 +1,12 @@
 <?php
 /*---------------------------------------------------------------------------*/
+//	@package TOPF
+//	@version 1.0
+//	@author Jeff Parsons <jeffrey.allen.parsons@gmail.com>
+//	@copyright Copyright (c) 2011, Jeff Parsons
+//	@link http://diverge.blogdns.com/blog/wordpress-theme-options-panel-framework/
+//	@license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+//
 //	This file is Divergence Theme secific and implements the options setup in
 //	The Theme Options Panel Framework
 //	The bulk of the file formulates final CSS that is added on after all other CSS
